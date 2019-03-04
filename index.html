@@ -20,8 +20,11 @@
                 
                 // 把主面隐藏起来包括主页的占用空间、用幅面代替
                 $('#frontpage').css('display', 'none');
-                $('#result').css('display', 'block');
+                $('#result').css({
+                    'display': 'block', 
+                    'background-image':'linear-gradient(to right, white, pink)'});
                 $('body').css('border', 'none');
+                $('h2, h3').css('color', dcolor);
                 $('#pay').html(payment);
                 $('#order').html(order);
             });
