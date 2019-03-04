@@ -8,44 +8,107 @@
     <script>
         $(function() {
             //my own jQuery/javascript. Do not delete anything. Write your code inside the $(function(){     });
-            
+            $('button').click(function(){
+                var name = $('#name').val();
+                var age = $('#age').val();
+                var location = $('#location').val();
+                var lcolor = $('#lcolor').val();
+                var dcolor = $('#dcolor').val();
+                
+                var payment = "Pay: 100 million dollars ";
+                var order = "Pay to the order of: " + name;
+                
+                // 把主面隐藏起来包括主页的占用空间、用幅面代替
+                $('#frontpage').css('display', 'none');
+                $('#result').css('display', 'block');
+                $('body').css('border', 'none');
+                $('#pay').html(payment);
+                $('#order').html(order);
+            });
         });
     </script>
     <style>
-    body {
-        border: 15px solid pink;
-    }
-    h1 {
-        font-size: 30px;
-        color: red;
-        display: inline-block;
-        padding: 10px;
-        margin: 5px;
-    }
-    input {
-        width: 30%;
-        height: 40px;
-        font-size: 25px;
-    }
+        body {
+            border: 15px solid pink;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: red;
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        input {
+            /*表格里面的字体大小以及表格的外观*/
+            width: 30%;
+            height: 40px;
+            font-size: 20px;
+        }
+        
+        #result {
+            display: none;
+            border: 2px solid black;
+        }
+        
+        button {
+            /*按钮的位置以及外观*/
+            height: 30px;
+            width: 100px;
+            font-size: 20px;
+            margin: 10px;
+            position: relative;
+            left:50%;
+        }
+        
+        h2 {
+            font-size: 40px;
+            color: green;
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 22px;
+        }
+        
+        #mueller {
+            /*图片*/
+            width: 12%;
+            height: auto;
+            border-radius: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Name:</h1>
-    <input id ='name' placeholder = 'Full Name'> 
-    <br></br>
-    <h1>Age:</h1>
-    <input id ='age' placeholder = 'Age'>
-    <br></br>
-    <h1>Location:</h1>
-    <input id ='lcoation' placeholder = 'Where you live?'>
-    <br></br>
-    <h1>Light Color:</h1>
-    <input id ='lcolor' placeholder = 'Favourite Light Color'>
-    <br></br>
-    <h1>Dark Color:</h1>
-    <input id ='lcolor' placeholder = 'Favourite Dark Color'>
+    <div id='frontpage'>
+        <h1>Name:</h1>
+        <input id='name' placeholder='Full Name'>
+        <br><br>
+        <h1>Age:</h1>
+        <input id='age' placeholder='Age'>
+        <br></br>
+        <h1>Location:</h1>
+        <input id='location' placeholder='Where you live?'>
+        <br></br>
+        <h1>Light Color:</h1>
+        <input id='lcolor' placeholder='Favourite Light Color'>
+        <br></br>
+        <h1>Dark Color:</h1>
+        <input id='dcolor' placeholder='Favourite Dark Color'>
+        <br></br>
+        <button>Generate</button>
+    </div>
     
+    <div id='result'>
+        <h2>Mueller Lottery</h2>
+        <img src = 'image/mueller.jpg' id = 'mueller'>
+        <h3 id='pay'></h3>
+        <h3 id='order'></h3>
+        <p></p>
+    </div>
+
 </body>
 
 </html>
