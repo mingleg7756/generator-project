@@ -8,21 +8,29 @@
     <script>
         $(function() {
             //my own jQuery/javascript. Do not delete anything. Write your code inside the $(function(){     });
-            $('button').click(function(){
+            $('button').click(function() {
                 var name = $('#name').val();
                 var age = $('#age').val();
                 var location = $('#location').val();
                 var lcolor = $('#lcolor').val();
                 var dcolor = $('#dcolor').val();
-                
+
                 var payment = "Pay: 100 million dollars ";
                 var order = "Pay to the order of: " + name;
-                
+
+                console.log(age);
+                // if (age <= 18) {
+                //     $('#frontpage').css('display', 'none');
+                //     $('#result').css('display', 'none');
+                //     $('#result2').css('display', 'block');
+                // }
+
                 // 把主面隐藏起来包括主页的占用空间、用幅面代替
                 $('#frontpage').css('display', 'none');
                 $('#result').css({
-                    'display': 'block', 
-                    'background-image':'linear-gradient(to right, white, pink)'});
+                    'display': 'block',
+                    'background-image': 'linear-gradient(to right, white,' + lcolor + ')'
+                });
                 $('body').css('border', 'none');
                 $('h3').css('color', dcolor);
                 $('#pay').html(payment);
@@ -49,12 +57,17 @@
             height: 40px;
             font-size: 20px;
         }
-        
+
         #result {
             display: none;
             border: 2px solid black;
         }
-        
+
+        #result2 {
+            display: none;
+            border: 2px solid green;
+        }
+
         button {
             /*按钮的位置以及外观*/
             height: 30px;
@@ -62,19 +75,19 @@
             font-size: 20px;
             margin: 10px;
             position: relative;
-            left:50%;
+            left: 50%;
         }
-        
+
         h2 {
             font-size: 40px;
             color: green;
             display: inline-block;
         }
-        
+
         h3 {
             font-size: 22px;
         }
-        
+
         #mueller {
             /*图片*/
             width: 12%;
@@ -103,14 +116,18 @@
         <br></br>
         <button>Generate</button>
     </div>
-    
+
     <div id='result'>
         <h2>Mueller Lottery</h2>
-        <img src = 'image/mueller.jpg' id = 'mueller'>
+        <img src='image/mueller.jpg' id='mueller'>
         <h3 id='pay'></h3>
         <h3 id='order'></h3>
         <p></p>
     </div>
+
+    <!--<div id='result2'>-->
+    <!--    <h4>Hello!</h4>-->
+    <!--</div>-->
 
 </body>
 
