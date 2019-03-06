@@ -9,11 +9,13 @@
         $(function() {
             //my own jQuery/javascript. Do not delete anything. Write your code inside the $(function(){     });
             $('button').click(function() {
-                var name = $('#name').val();
+
                 
                 // $('#name')
                 // document.getElementById("#name")
                 
+                // 以下是所有变量
+                var name = $('#name').val();
                 var age = $('#age').val();
                 var location = $('#location').val();
                 var lcolor = $('#lcolor').val();
@@ -52,33 +54,27 @@
             border: 15px solid pink;
         }
 
-        h1 {
-            font-size: 30px;
-            color: red;
-            display: inline-block;
-            padding: 10px;
-            margin: 5px;
-        }
-
+        /*表格里面的字体大小以及表格的外观*/
         input {
-            /*表格里面的字体大小以及表格的外观*/
             width: 30%;
             height: 40px;
             font-size: 20px;
         }
 
+        /*第一幅面的外观*/
         #result {
             display: none;
             border: 2px solid black;
         }
-
+        
+        /*第二幅面的外观*/
         #result2 {
             display: none;
             background-color: red;
         }
-
+        
+        /*按钮的位置以及外观*/        
         button {
-            /*按钮的位置以及外观*/
             height: 30px;
             width: 100px;
             font-size: 20px;
@@ -86,24 +82,37 @@
             position: relative;
             left: 50%;
         }
-
+        
+        /*H1的外观*/
+        h1 {
+            font-size: 30px;
+            color: red;
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+        }
+        
+        /*H2的外观*/
         h2 {
             font-size: 45px;
             color: green;
             display: inline-block;
         }
-
+        
+        /*H3的外观*/
         h3 {
             font-size: 30px;
         }
         
+        /*H4的外观*/
         h4 {
             padding: -20px;
             font-size: 40px;
             text-align: center;
             color:white;
         }
-
+        
+        /*彩票logo外观*/
         #mueller {
             /*图片*/
             width: 12%;
@@ -111,6 +120,7 @@
             border-radius: 100%;
         }
         
+        /*‘停’标志的外观*/
         #stop {
             width: 20%;
             display: block;
@@ -120,6 +130,7 @@
 </head>
 
 <body>
+    <!--主面外观，表格以及按钮-->
     <div id='frontpage'>
         <h1>Name:</h1>
         <input id='name' placeholder='Full Name'>
@@ -138,7 +149,8 @@
         <br></br>
         <button>Generate</button>
     </div>
-
+    
+    <!--第一幅面-->
     <div id='result'>
         <h2>Mueller Lottery</h2>
         <img src='image/mueller.jpg' id='mueller'>
@@ -146,7 +158,8 @@
         <h3 id='order'></h3>
         <p></p>
     </div>
-
+    
+    <!--第二幅面-->
     <div id='result2'>
         <img src='image/stop.png' id='stop'>
         <h4></h4>
